@@ -9,6 +9,7 @@
 
 @interface ViewController : UIViewController
 @property(nonatomic, strong) IBOutlet UITextField* myTextField;
+@property(nonatomic, strong) NSMutableArray* array;
 
 
 @end
