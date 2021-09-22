@@ -20,6 +20,23 @@
 
 @synthesize myTextField;
 @synthesize array;
+@synthesize buttons;
+
+- (void)buttonIsClicked:(UIButton*)button{
+    if(button.backgroundColor==[UIColor whiteColor])
+        button.backgroundColor=[UIColor grayColor];
+}
+
+- (IBAction)add:(NSString*)str{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button addTarget:self
+               action:@selector(buttonIsClicked:)
+     forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:((void)(@"%a"),str) forState:UIControlStateNormal];
+    //button.center=[self.view convertPoint:self.view.center fromView:self.view.superview];
+    button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
+    [self.view addSubview:button];
+}
 
 - (IBAction)addItem:(NSString*)str{
     if(!array){
@@ -37,7 +54,8 @@
     //[myTextField resignFirstResponder];
     NSString* str=myTextField.text;
     NSLog(@"%@", str);
-    [self addItem:str];
+    [self add:str];
+    //[self addItem:str];
     return YES;
 }
 

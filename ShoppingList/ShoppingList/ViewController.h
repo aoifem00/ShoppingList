@@ -10,6 +10,7 @@
 @interface ViewController : UIViewController
 @property(nonatomic, strong) IBOutlet UITextField* myTextField;
 @property(nonatomic, strong) NSMutableArray* array;
+@property(nonatomic, strong) IBOutletCollection(UIButton) NSMutableArray *buttons;
 
 
 @end
