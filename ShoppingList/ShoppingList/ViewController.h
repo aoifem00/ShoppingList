@@ -12,6 +12,7 @@
 @property(nonatomic, strong) NSMutableArray* array;
 @property(nonatomic, strong) IBOutletCollection(UIButton) NSMutableArray *buttons;
 
+extern NSInteger i;
 
 @end
 

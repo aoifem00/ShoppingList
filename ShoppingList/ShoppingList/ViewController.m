@@ -22,6 +22,8 @@
 @synthesize array;
 @synthesize buttons;
 
+NSInteger i=1;
+
 - (void)buttonIsClicked:(UIButton*)button{
     if(button.backgroundColor==[UIColor whiteColor])
         button.backgroundColor=[UIColor grayColor];
@@ -34,7 +36,8 @@
      forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:((void)(@"%a"),str) forState:UIControlStateNormal];
     //button.center=[self.view convertPoint:self.view.center fromView:self.view.superview];
-    button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
+    button.frame = CGRectMake(80.0*i, 210.0*i, 160.0, 40.0);
+    i=i+1;
     [self.view addSubview:button];
 }
 
